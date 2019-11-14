@@ -27,7 +27,7 @@ SECRET_KEY = '()l1+fjmky@w_lvjc_&w#bb8umufukbbxao#+t*$b+bh#)bnlb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['postgres://sffyzgve:IYod-oqzhk_B7U7zoYfZL54tSoZ7QnaW@manny.db.elephantsql.com:5432/sffyzgve']
 
 
 # Application definition
@@ -57,7 +57,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ecology.urls'
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'ecology.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-        'NAME': 'Eco',                     
+        'NAME': 'sffyzgve',                     
         'USER': 'sffyzgve',
         'PASSWORD': 'IYod-oqzhk_B7U7zoYfZL54tSoZ7QnaW',
-        'HOST': 'postgres://sffyzgve:IYod-oqzhk_B7U7zoYfZL54tSoZ7QnaW@manny.db.elephantsql.com:5432/sffyzgve',
+        'HOST': 'manny.db.elephantsql.com',
         'PORT': '5432',                     
     }
 }
