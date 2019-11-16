@@ -29,7 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['postgres://sffyzgve:IYod-oqzhk_B7U7zoYfZL54tSoZ7QnaW@manny.db.elephantsql.com:5432/sffyzgve']
 
-
+#LOGIN_URL = 'accounts/login/'
+#LOGIN_REDIRECT_URL = '/login'
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts'
     'eco',
 ]
 
