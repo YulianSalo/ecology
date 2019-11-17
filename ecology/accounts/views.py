@@ -4,10 +4,6 @@ from django.contrib.auth.views import LoginView as login
 from django.shortcuts import render, redirect
 from accounts.forms import SignUpForm
 
-@login_required()
-def home(request):
-    return render(request, 'home.html')
-
 def login(request):
     return render(request, 'login.html')
 

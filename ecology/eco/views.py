@@ -4,15 +4,22 @@ from django.shortcuts import render
 from eco.models import *
 from django.contrib.auth.decorators import login_required
 
+#@login_required(login_url="/accounts/login/")
 def ecoMeasuredList(request):
-    articles = Article.objects.all().order_by('date');
-    return render(request, 'eco/article_list.html', { 'articles': articles })
+	ecoMeasures = ecoParameterMeasured.objects.all().order_by('date')
+	context = {
+	'ecoMeasures': ecoMeasures
+	}
+	return render(request, 'eco/home.html', context)
 
-def ecoMeasuredDetail(request, slug):
-    # return HttpResponse(slug)
-    article = Article.objects.get(slug=slug)
-    return render(request, 'eco/article_detail.html', { 'article': article })
+def ecoMeasuredDetail(request, pk):
+# return HttpResponse(slug)
+	ecoMeasure = ecoParameterMeasured.objects.get(pk=pk)
+	context = {
+	'ecoMeasure': ecoMeasure
+	}
+	return render(request, 'eco/ecoMeasurementDetail.html',context)
 
 @login_required(login_url="/accounts/login/")
 def ecoMeasuredNew(request):
-    return render(request, 'eco/home.html')
+	return render(request, 'eco/home.html')

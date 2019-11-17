@@ -15,7 +15,7 @@ import psycopg2
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -59,11 +59,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ecology.urls'
 
 
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'templates'],
+        'DIRS': ['ecology/templates', 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
